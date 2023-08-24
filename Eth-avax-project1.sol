@@ -2,18 +2,17 @@
 pragma solidity ^0.8.0;
 
 contract SimpleContract {
-    int public val;
 
-    function checkAge(int256 age) public pure returns(string memory) {
+    function checkAge(int age) public pure returns(string memory) {
 
-        require(age > 0, "Age can't be negative");
+        require(age < 100 , "Fake id detected");
         if (age < 18) {
             revert("Under-age");
         }
         return "Right to vote is applicable";
     }
 
-    function assertExample(uint num1, uint num2) public pure returns (uint256) {
+    function assertExample(int num1, int num2) public pure returns (int) {
         assert(num1 < num2);
         return num1 + num2;
     }
